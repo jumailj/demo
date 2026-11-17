@@ -1,0 +1,57 @@
+/* ============ RTI page ============ */
+.rti-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(32px, 2rem + 4vw, 112px);
+  align-items: start;
+}
+
+.rti-list { list-style: none; margin: var(--sp-6) 0 0; padding: 0; counter-reset: rti; max-width: 62ch; }
+.rti-list li {
+  position: relative; counter-increment: rti;
+  padding: var(--sp-4) 0 var(--sp-4) 48px;
+  border-top: 1px solid var(--border);
+  color: var(--text-2); font-size: var(--fs-md);
+}
+.rti-list li:last-child { border-bottom: 1px solid var(--border); }
+.rti-list li::before {
+  content: counter(rti, decimal-leading-zero);
+  position: absolute; left: 0; top: var(--sp-4);
+  color: var(--brand-text); font-size: var(--fs-sm); font-weight: 700; line-height: 1.7;
+  font-variant-numeric: tabular-nums;
+}
+.rti-list strong { color: var(--text); }
+
+.rti-address {
+  display: grid; gap: var(--sp-4);
+  padding: clamp(24px, 1.2rem + 1vw, 36px);
+  border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface);
+}
+.rti-address .card-kicker { margin: 0; }
+.rti-address address { font-style: normal; color: var(--text-2); line-height: 1.65; }
+.rti-address address strong { display: block; color: var(--text); font-size: 1.125rem; margin-bottom: 2px; }
+.rti-fee {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-4);
+  margin: 0; padding-top: var(--sp-4); border-top: 1px solid var(--border);
+  color: var(--text-2); font-size: var(--fs-sm);
+}
+.rti-fee strong { color: var(--text); font-size: 1.5rem; letter-spacing: -0.02em; }
+
+.rti-table { margin-top: var(--sp-6); max-width: 880px; }
+.rti-table .data-table { min-width: 560px; }
+.rti-table .data-table td:first-child { width: auto; color: var(--text-2); }
+.rti-table .data-table td:nth-child(2) { font-weight: 600; color: var(--text); }
+.rti-table .data-table a { font-weight: 600; }
+
+@media (max-width: 900px) {
+  .rti-layout { grid-template-columns: minmax(0, 1fr); }
+  .rti-address { max-width: 480px; }
+}
+@media (max-width: 600px) {
+  .rti-table .data-table { min-width: 0; }
+  .rti-table thead { display: none; }
+  .rti-table tr { display: grid; gap: 2px; padding: var(--sp-4) var(--sp-5); border-top: 1px solid var(--border); }
+  .rti-table tr:first-child { border-top: 0; }
+  .rti-table td { display: block; padding: 0; border: 0; }
+  .rti-table td:first-child { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-text); }
+}

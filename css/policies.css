@@ -1,0 +1,13 @@
+/* ============ Compendium of Policies ============ */
+.policy-group + .policy-group { margin-top: clamp(48px, 2.5rem + 2vw, 72px); }
+.policy-group-title {
+  display: flex; align-items: center; gap: var(--sp-3);
+  margin: 0 0 var(--sp-5);
+  font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2);
+}
+.policy-group-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.policy-group-title span {
+  display: grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px;
+  border-radius: 999px; background: var(--brand-soft); color: var(--brand-text); letter-spacing: 0; font-size: 11px;
+}
+
