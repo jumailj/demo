@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News &amp; Events | LEAD College</title>
-  <meta name="description" content="Confirmed dates and updates from the LEAD College community.">
+  <meta name="description" content="The LEAD College newsroom: what's open now, the latest stories and every campus event, with dates.">
   <link rel="icon" href="assets/brand/lead-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/news.css">
   <script>try{var t=localStorage.getItem("lead-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <script src="js/main.js" defer></script>
 </head>
@@ -19,51 +20,235 @@
   <div id="site-header"></div><script src="js/layout.js"></script>
 
   <main id="main">
-    <section class="page-hero">
+    <!-- ============ Front page ============ -->
+    <section class="page-hero page-hero--dark nx-hero">
       <div class="container">
         <nav class="breadcrumb" data-breadcrumb></nav>
-        <div class="page-hero-grid page-hero-grid--solo">
+        <div class="nx-hero-head">
           <div>
-            <p class="eyebrow">LEAD College · Campus calendar</p>
+            <p class="eyebrow">LEAD College newsroom</p>
             <h1>News &amp; events.</h1>
-            <p class="lede">Confirmed dates and updates from the LEAD community, in one place.</p>
           </div>
+          <!-- When you update this page, change data-updated (and the date text) to today's date. -->
+          <p class="nx-stamp" data-updated="2026-11-17"><span class="nx-dot" aria-hidden="true"></span>Last updated <time datetime="2026-11-17">17 Nov 2026</time><small data-ago="2026-11-17"></small></p>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container" style="max-width:1040px">
-        <div class="section-head section-head--stack"><p class="eyebrow">Up next</p><h2>Upcoming dates</h2></div>
-        <div class="card" style="text-align:center;padding:var(--sp-7)">
-          <h3>No upcoming dates announced yet</h3>
-          <p>New dates will appear here once they are confirmed. Follow LEAD on <a href="https://www.instagram.com/lead_college_official/" target="_blank" rel="noopener">Instagram</a> for the latest updates.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt">
-      <div class="container" style="max-width:1040px">
-        <div class="section-head section-head--stack"><p class="eyebrow">Event archive</p><h2>Recent events</h2><p class="muted">Listed by date, newest first.</p></div>
-        <div class="stack-lg">
-          <article class="card feature-card">
-            <img src="assets/img/campus/outbound-training.jpg" alt="Students taking part in an outdoor leadership challenge" loading="lazy">
-            <div class="feature-card-body">
-              <p class="card-kicker">1–3 Oct 2026 · Leadership fest</p>
-              <h3 style="font-size:1.75rem;margin:var(--sp-2) 0">iLEAD 2026</h3>
-              <p>Three days of leadership challenges, adventure, culture and music at LEAD College, Dhoni.</p>
-              <div class="btn-row" style="margin-top:var(--sp-5)"><a class="btn btn--sm" href="https://www.lead.ac.in/ilead" target="_blank" rel="noopener">Event details <svg class="i"><use href="#i-arrow"/></svg></a></div>
+        <div class="nx-top">
+          <a class="nx-lead" href="#ilead-2026">
+            <img src="assets/img/campus/outbound-training.jpg" alt="A student on a tyre-wall challenge during an outdoor leadership game">
+            <div class="nx-lead-body">
+              <div class="nx-labels"><span class="nx-label nx-label--done">Just wrapped</span><span class="nx-label nx-label--cat">Leadership fest</span></div>
+              <h2>iLEAD 2026: three days of leadership and adventure.</h2>
+              <p>College teams from across Kerala came to LEAD for leadership games, adventure, a cultural night and a DJ night. Christ College, Irinjalakuda took first prize.</p>
+              <div class="nx-lead-facts"><span>1–3 Oct 2026</span><span>300 team places</span><span>₹6 lakh in prizes</span></div>
+              <p class="nx-meta"><time datetime="2026-10-03">3 Oct 2026</time> <span data-ago="2026-10-03"></span></p>
             </div>
-          </article>
-          <div class="grid grid-2">
-            <article class="card"><p class="card-kicker">28–30 Jan 2026 · Faculty development</p><h3>Faculty Development Programme</h3><p>A programme for faculty learning and professional development.</p></article>
-            <article class="card"><p class="card-kicker">6 Dec 2025 · Placement cell</p><h3>Training &amp; Placement Officers’ Meet</h3><p>A gathering for training and placement officers.</p></article>
+          </a>
+
+          <div class="nx-side">
+            <a class="nx-story" href="admissions.html">
+              <img src="assets/img/programmes/mba-classroom.jpg" alt="" loading="lazy">
+              <div class="nx-story-body">
+                <span class="nx-label nx-label--live">Open now</span>
+                <h3>Admissions 2026 are open for MBA &amp; MCA</h3>
+                <p class="nx-meta">Scholarships for merit and entrance scores</p>
+              </div>
+            </a>
+            <a class="nx-story" href="#onam-2026">
+              <img src="assets/img/life/onam-2026.jpg" alt="" loading="lazy">
+              <div class="nx-story-body">
+                <span class="nx-label nx-label--cat">Campus life</span>
+                <h3>Aaravam: the campus celebrates Onam 2026</h3>
+                <p class="nx-meta">Onam season 2026</p>
+              </div>
+            </a>
+            <a class="nx-story" href="#fdp-2026">
+              <img src="assets/img/life/mentoring-session.jpg" alt="" loading="lazy">
+              <div class="nx-story-body">
+                <span class="nx-label nx-label--cat">Faculty</span>
+                <h3>Faculty Development Programme</h3>
+                <p class="nx-meta"><time datetime="2026-01-30">28–30 Jan 2026</time> <span data-ago="2026-01-30"></span></p>
+              </div>
+            </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Ticker ============ -->
+    <div class="nx-ticker" aria-label="Latest headlines">
+      <span class="nx-ticker-label"><span class="nx-dot" aria-hidden="true"></span>Latest<span>&nbsp;news</span></span>
+      <div class="nx-ticker-track">
+        <a href="admissions.html"><b>Admissions</b> MBA &amp; MCA applications for 2026 are open</a>
+        <a href="#ilead-2026"><b>iLEAD 2026</b> Christ College, Irinjalakuda wins first prize</a>
+        <a href="#onam-2026"><b>Campus life</b> Aaravam: LEAD celebrates Onam 2026</a>
+        <a href="#fdp-2026"><b>Faculty</b> Faculty Development Programme, 28–30 Jan</a>
+        <a href="#tpo-meet"><b>Placements</b> Training &amp; Placement Officers’ Meet, 6 Dec 2025</a>
+        <span aria-hidden="true" style="display:contents">
+          <a href="admissions.html" tabindex="-1"><b>Admissions</b> MBA &amp; MCA applications for 2026 are open</a>
+          <a href="#ilead-2026" tabindex="-1"><b>iLEAD 2026</b> Christ College, Irinjalakuda wins first prize</a>
+          <a href="#onam-2026" tabindex="-1"><b>Campus life</b> Aaravam: LEAD celebrates Onam 2026</a>
+          <a href="#fdp-2026" tabindex="-1"><b>Faculty</b> Faculty Development Programme, 28–30 Jan</a>
+          <a href="#tpo-meet" tabindex="-1"><b>Placements</b> Training &amp; Placement Officers’ Meet, 6 Dec 2025</a>
+        </span>
+      </div>
+    </div>
+
+    <!-- ============ Timeline ============ -->
+    <section class="section section--alt" id="all-news" aria-labelledby="all-title">
+      <div class="container" style="max-width:1080px">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Timeline</p>
+            <h2 id="all-title">Everything, newest first.</h2>
+          </div>
+          <p>Every story shows when it happened, so you always know how recent it is.</p>
+        </div>
+
+        <div class="nx-filter" role="group" aria-label="Filter by topic">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="admissions" aria-pressed="false">Admissions</button>
+          <button type="button" data-filter="events" aria-pressed="false">Events</button>
+          <button type="button" data-filter="campus" aria-pressed="false">Campus life</button>
+          <button type="button" data-filter="faculty" aria-pressed="false">Faculty</button>
+          <button type="button" data-filter="placements" aria-pressed="false">Placements</button>
+        </div>
+
+        <div data-timeline>
+          <h3 class="nx-month">Happening now</h3>
+          <ul class="nx-list">
+            <li class="nx-item" data-cat="admissions">
+              <figure class="nx-item-media"><img src="assets/img/programmes/mba-classroom.jpg" alt="MBA students in a classroom" loading="lazy"><span class="nx-day"><strong>2026</strong><span>Intake</span></span></figure>
+              <div class="nx-item-body">
+                <div class="nx-labels"><span class="nx-label nx-label--live">Open now</span><span class="nx-label nx-label--cat">Admissions</span></div>
+                <h3>Admissions 2026 are open</h3>
+                <p>Applications for the MBA and MCA programmes are open, with scholarships for merit and high entrance-exam scores.</p>
+                <div class="nx-item-foot">
+                  <span class="nx-posted"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Status checked <time datetime="2026-11-17">17 Nov 2026</time> <span data-ago="2026-11-17"></span></span>
+                  <a class="nx-link" href="admissions.html">How to apply <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="nx-month">October 2026</h3>
+          <ul class="nx-list">
+            <li class="nx-item" id="ilead-2026" data-cat="events">
+              <figure class="nx-item-media"><img src="assets/img/campus/outbound-training.jpg" alt="Outdoor leadership challenge" loading="lazy"><span class="nx-day"><strong>01–03</strong><span>Oct</span></span></figure>
+              <div class="nx-item-body">
+                <div class="nx-labels"><span class="nx-label nx-label--done">Completed</span><span class="nx-label nx-label--cat">Events</span></div>
+                <h3>iLEAD 2026 leadership fest</h3>
+                <p>Teams of five took on leadership and adventure games, then came together for the cultural night and DJ night. Winners: 1st and 2nd, Christ College, Irinjalakuda; 3rd, VISAT Arts &amp; Science College, Elanji.</p>
+                <div class="nx-item-foot">
+                  <span class="nx-posted"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><time datetime="2026-10-03">1–3 Oct 2026</time> <span data-ago="2026-10-03"></span></span>
+                  <a class="nx-link" href="https://www.lead.ac.in/ilead" target="_blank" rel="noopener">iLEAD site <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="nx-month">Onam season 2026</h3>
+          <ul class="nx-list">
+            <li class="nx-item" id="onam-2026" data-cat="campus">
+              <figure class="nx-item-media"><img src="assets/img/life/onam-2026.jpg" alt="Aaravam, the LEAD Onam 2026 poster" loading="lazy"><span class="nx-day"><strong>Onam</strong><span>2026</span></span></figure>
+              <div class="nx-item-body">
+                <div class="nx-labels"><span class="nx-label nx-label--done">Completed</span><span class="nx-label nx-label--cat">Campus life</span></div>
+                <h3>Aaravam, LEAD Onam 2026</h3>
+                <p>The LEAD community came together on campus to celebrate Onam.</p>
+                <div class="nx-item-foot">
+                  <span class="nx-posted"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Onam 2026</span>
+                  <a class="nx-link" href="https://www.instagram.com/lead_college_official/" target="_blank" rel="noopener">Photos on Instagram <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="nx-month">January 2026</h3>
+          <ul class="nx-list">
+            <li class="nx-item" id="fdp-2026" data-cat="faculty">
+              <figure class="nx-item-media"><img src="assets/img/life/mentoring-session.jpg" alt="A faculty learning session" loading="lazy"><span class="nx-day"><strong>28–30</strong><span>Jan</span></span></figure>
+              <div class="nx-item-body">
+                <div class="nx-labels"><span class="nx-label nx-label--done">Completed</span><span class="nx-label nx-label--cat">Faculty</span></div>
+                <h3>Faculty Development Programme</h3>
+                <p>A three-day programme for faculty learning and professional development.</p>
+                <div class="nx-item-foot">
+                  <span class="nx-posted"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><time datetime="2026-01-30">28–30 Jan 2026</time> <span data-ago="2026-01-30"></span></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="nx-month">December 2025</h3>
+          <ul class="nx-list">
+            <li class="nx-item" id="tpo-meet" data-cat="placements">
+              <figure class="nx-item-media"><img src="assets/img/campus/placement-learning.jpg" alt="A placement session at LEAD" loading="lazy"><span class="nx-day"><strong>06</strong><span>Dec</span></span></figure>
+              <div class="nx-item-body">
+                <div class="nx-labels"><span class="nx-label nx-label--done">Completed</span><span class="nx-label nx-label--cat">Placements</span></div>
+                <h3>Training &amp; Placement Officers’ Meet</h3>
+                <p>A gathering for training and placement officers, hosted by the LEAD placement cell.</p>
+                <div class="nx-item-foot">
+                  <span class="nx-posted"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><time datetime="2025-12-06">6 Dec 2025</time> <span data-ago="2025-12-06"></span></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Coming up ============ -->
+    <section class="section" id="coming-up" aria-labelledby="next-title">
+      <div class="container" style="max-width:1080px">
+        <div class="nx-next">
+          <div class="nx-next-cal" aria-hidden="true"><span>Next</span><strong>?</strong></div>
+          <div>
+            <p class="eyebrow">Coming up</p>
+            <h2 id="next-title">The next big date is on its way.</h2>
+            <p>Upcoming events appear here as soon as they’re confirmed. For daily updates, photos and reels, follow LEAD on Instagram.</p>
+          </div>
+          <div class="btn-row"><a class="btn" href="https://www.instagram.com/lead_college_official/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg> Follow on Instagram</a></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer id="site-footer"></footer>
+
+  <script>
+    (function () {
+      // "x weeks ago" next to every date
+      var rtf = window.Intl && Intl.RelativeTimeFormat ? new Intl.RelativeTimeFormat("en", { numeric: "auto" }) : null;
+      var today = new Date(); today.setHours(0, 0, 0, 0);
+      document.querySelectorAll("[data-ago]").forEach(function (el) {
+        if (!rtf) return;
+        var d = new Date(el.getAttribute("data-ago") + "T00:00:00");
+        var days = Math.round((d - today) / 864e5);
+        var a = Math.abs(days), txt;
+        if (a < 7) txt = rtf.format(days, "day");
+        else if (a < 60) txt = rtf.format(Math.round(days / 7), "week");
+        else if (a < 365) txt = rtf.format(Math.round(days / 30.4), "month");
+        else txt = rtf.format(Math.round(days / 365), "year");
+        el.textContent = "· " + txt;
+      });
+
+      // Topic filter
+      var buttons = document.querySelectorAll(".nx-filter button");
+      var timeline = document.querySelector("[data-timeline]");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var f = btn.getAttribute("data-filter");
+          buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+          timeline.querySelectorAll(".nx-item").forEach(function (item) {
+            item.hidden = f !== "all" && item.getAttribute("data-cat") !== f;
+          });
+          timeline.querySelectorAll(".nx-month").forEach(function (h) {
+            var list = h.nextElementSibling;
+            var visible = list.querySelectorAll(".nx-item:not([hidden])").length > 0;
+            h.hidden = !visible; list.hidden = !visible;
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
