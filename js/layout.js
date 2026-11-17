@@ -44,8 +44,10 @@
           { label: "Founder", href: "founder.html" }
         ]},
         { title: "Accreditations & Awards", links: [
-          { label: "HLACT–UK" }, { label: "NAAC" }, { label: "NBA" }, { label: "NIRF" },
-          { label: "AICTE" }, { label: "IQAC: QLEAD" }, { label: "Faculty Initiative" }, { label: "Statutory Information" }
+          { label: "HLACT–UK", href: "iqac.html#hlact" }, { label: "NAAC", href: "iqac.html#naac" },
+          { label: "NBA", href: "iqac.html#nba" }, { label: "NIRF", href: "iqac.html#nirf" },
+          { label: "AICTE", href: "iqac.html#aicte-approvals" }, { label: "IQAC: QLEAD", href: "iqac.html#overview" },
+          { label: "Faculty Initiative", href: "iqac.html#faculty-initiatives" }, { label: "Statutory Information", href: "iqac.html#disclosures" }
         ]},
         { title: "Administration", links: [
           { label: "Prompt Charitable Trust", href: "prompt-charitable-trust.html" },
@@ -150,7 +152,7 @@
       label: "IQAC",
       intro: "Internal quality assurance at LEAD.",
       groups: [
-        { title: "IQAC & Governance", links: [{ label: "Coordinator — IQAC" }, { label: "Functions and Objectives" }, { label: "IQAC Core Committee" }] },
+        { title: "IQAC & Governance", links: [{ label: "Quality & Accreditation", href: "iqac.html" }, { label: "Coordinator — IQAC", href: "iqac.html#leadership" }, { label: "Functions and Objectives" }, { label: "IQAC Core Committee" }] },
         { title: "Quality Processes", links: [{ label: "Curriculum Feedback" }, { label: "Reports" }, { label: "Quality Policy" }] },
         { title: "Institutional Practice", links: [{ label: "Institutional Values" }, { label: "Distinctiveness" }, { label: "Best Practices" }] }
       ]
@@ -172,7 +174,7 @@
     { label: "Alumni", href: "alumni.html", icon: "users" }
   ];
 
-  /* Site-wide notices shown in the bar under the main nav (rotates when there is more than one) */
+  /* Notices shown in the bar under the main nav on the homepage only (rotates when there is more than one) */
   var NOTICES = [
     { title: "Admissions 2026:", text: "MBA and MCA admissions are officially open · Scholarships for merit and entrance exam high scorers.", link: { label: "Eligibility details", href: "admissions.html#eligibility" } },
     { title: "iLEAD 2026:", text: "The leadership fest was held on 1–3 October 2026.", link: { label: "See events", href: "news-events.html" } },
@@ -233,11 +235,11 @@
   function linkHTML(l, cls) {
     if (!l.href) {
       return '<span class="' + cls + ' is-pending" aria-disabled="true" title="Page coming in a later revision">' +
-        (l.icon && cls === "utility-link" ? icon(l.icon) : "") + esc(l.label) + '<span class="soon-tag">Soon</span></span>';
+        (l.icon && /utility-link|m-quick-link/.test(cls) ? icon(l.icon) : "") + esc(l.label) + '<span class="soon-tag">Soon</span></span>';
     }
     var ext = l.external ? ' target="_blank" rel="noopener"' : "";
     var cur = isCurrent(l.href) ? ' aria-current="page"' : "";
-    return '<a class="' + cls + '" href="' + esc(l.href) + '"' + ext + cur + ">" + (l.icon && cls === "utility-link" ? icon(l.icon) : "") + esc(l.label) +
+    return '<a class="' + cls + '" href="' + esc(l.href) + '"' + ext + cur + ">" + (l.icon && /utility-link|m-quick-link/.test(cls) ? icon(l.icon) : "") + esc(l.label) +
       (l.external ? icon("arrow", "i-ext") : "") + "</a>";
   }
 
@@ -293,10 +295,12 @@
       '<a class="btn btn--sm header-apply" href="admissions.html">Apply 2026' + icon("arrow") + "</a>" +
       '<button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">' + icon("menu") + "</button>" +
       "</div></div></header>" +
-      '<aside class="notice-bar" aria-label="Notices"><div class="container notice-inner">' +
-      '<span class="notice-label">' + icon("megaphone") + "Notice</span>" +
-      '<ul class="notice-list" data-rotator>' + notices + "</ul>" +
-      "</div></aside>" +
+      /* Notices appear on the homepage only */
+      (currentFile === "index.html" && notices ?
+        '<aside class="notice-bar" aria-label="Notices"><div class="container notice-inner">' +
+        '<span class="notice-label">' + icon("megaphone") + "Notice</span>" +
+        '<ul class="notice-list" data-rotator>' + notices + "</ul>" +
+        "</div></aside>" : "") +
       "</div>" +
       renderMobileMenu();
   }
@@ -321,6 +325,8 @@
       '<label class="m-search">' + icon("search") + '<input type="search" placeholder="Search pages" aria-label="Search menu" data-menu-search autocomplete="off"></label>' +
       '<p class="m-empty" data-menu-empty hidden>No pages match that search.</p>' +
       '<nav aria-label="Main (mobile)">' + groups + "</nav>" +
+      '<nav class="m-quick" aria-label="Quick links (mobile)">' +
+      UTILITY_LINKS.map(function (l) { return linkHTML(l, "m-quick-link"); }).join("") + "</nav>" +
       '<div class="m-apply"><a class="btn" href="' + APPLY_MBA + '" target="_blank" rel="noopener">Apply for MBA' + icon("arrow") + '</a><a class="btn btn--outline" href="' + APPLY_MCA + '" target="_blank" rel="noopener">Apply for MCA' + icon("arrow") + "</a></div>" +
       '<p class="m-contact"><a href="' + CONTACT.phoneHref + '">' + CONTACT.phone + '</a> · <a href="mailto:' + CONTACT.email + '">' + CONTACT.email + "</a></p>" +
       "</div></div>";
