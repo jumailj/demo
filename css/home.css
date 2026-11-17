@@ -59,7 +59,8 @@
   align-content: center;
   padding-block: clamp(48px, 3rem + 3vw, 104px) clamp(32px, 2rem + 2vw, 64px);
 }
-.home-hero .eyebrow { color: var(--lead-sky); }
+.home-hero .eyebrow { margin-bottom: var(--sp-4); color: var(--lead-sky); }
+.home-hero .eyebrow::before { display: none; }
 .home-hero h1 { color: #fff; max-width: 15ch; font-size: clamp(2.25rem, 1.4rem + 2.8vw, 3.625rem); }
 .home-hero h1 em { font-style: normal; color: var(--lead-sky); }
 .home-hero .lede { color: var(--on-dark-2); margin-top: var(--sp-5); max-width: 54ch; }
