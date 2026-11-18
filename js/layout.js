@@ -169,7 +169,6 @@
      muted, non-clickable text until its page or URL is added. */
   var UTILITY_LINKS = [
     { label: "LEAD Group of Institutions", icon: "building" },
-    { label: "Gallery", icon: "image" },
     { label: "News & Events", href: "news-events.html", icon: "calendar" },
     { label: "Alumni", href: "alumni.html", icon: "users" }
   ];
