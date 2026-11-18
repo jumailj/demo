@@ -532,6 +532,84 @@ a.m-link:hover, a.m-link[aria-current] { background: var(--brand-soft); color: v
   .hero-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* LEAD Story: an editorial opening grounded in the college's history. */
+.story-hero { padding-bottom: clamp(52px, 4rem + 2vw, 84px); }
+.story-hero .breadcrumb { margin-bottom: clamp(28px, 2rem + 1vw, 44px); }
+.story-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 3rem + 2vw, 72px);
+  align-items: stretch;
+}
+.story-hero-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.story-hero-copy h1 {
+  max-width: 12ch;
+  margin-top: var(--sp-3);
+  font-size: clamp(2.75rem, 2rem + 2.5vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: var(--tracking-tight);
+}
+.story-hero-copy .lede { max-width: 54ch; margin-top: var(--sp-5); }
+.story-hero-media {
+  position: relative;
+  min-width: 0;
+  min-height: 440px;
+  aspect-ratio: 1.18 / 1;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--surface-sunk);
+  box-shadow: var(--shadow-lg);
+}
+.story-hero-media::after {
+  position: absolute;
+  inset: 48% 0 0;
+  content: "";
+  background: linear-gradient(180deg, transparent, rgba(10, 29, 53, 0.7));
+  pointer-events: none;
+}
+.story-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.story-hero-media figcaption {
+  position: absolute;
+  z-index: 1;
+  left: 24px;
+  bottom: 22px;
+  color: #fff;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.story-hero-milestones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(36px, 3rem + 1vw, 56px);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border-strong);
+}
+.story-hero-milestones > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  padding-inline: clamp(14px, 2vw, 28px);
+  border-left: 1px solid var(--border);
+}
+.story-hero-milestones > div:first-child { padding-left: 0; border-left: 0; }
+.story-hero-milestones strong { color: var(--brand-text); font-size: clamp(1.25rem, 1rem + 0.7vw, 1.75rem); line-height: 1.15; }
+.story-hero-milestones p { max-width: 30ch; margin: 2px 0 0; color: var(--text-2); font-size: var(--fs-sm); line-height: 1.5; }
+@media (max-width: 900px) {
+  .story-hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
+  .story-hero-copy h1 { max-width: 15ch; }
+  .story-hero-media { min-height: 0; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 600px) {
+  .story-hero-milestones { grid-template-columns: minmax(0, 1fr); }
+  .story-hero-milestones > div,
+  .story-hero-milestones > div:first-child { padding: 14px 0; border-left: 0; border-top: 1px solid var(--border); }
+  .story-hero-milestones > div:first-child { border-top: 0; }
+  .story-hero-media figcaption { left: 16px; bottom: 16px; }
+}
+
 /* Dark variant of the page hero */
 .page-hero--dark {
   /* Same treatment as the homepage hero: campus photo under a navy shade */
